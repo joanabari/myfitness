@@ -1,12 +1,16 @@
 ## Client Brief
 
-*Client:* Niclas Grosch — a gym enthusiast who trains regularly and wants a more structured, personalized way to plan his workouts and track progress.
+*Client:* 
+Niclas Grosch — a gym enthusiast who trains regularly and wants a more structured, personalized way to plan his workouts and track progress.
 
-*Purpose:* To create an interactive quiz-style website that generates a complete, customized gym plan based on a few guided inputs. 
+*Purpose:* 
+To create an interactive quiz-style website that generates a complete, customized gym plan based on a few guided inputs. 
 
-*Audience:* Individuals who go to the gym and want a clear, structured weekly workout plan tailored to their goals, experience level, and schedule.
+*Audience:* 
+Individuals who go to the gym and want a clear, structured weekly workout plan tailored to their goals, experience level, and schedule.
 
-*Key action:* Complete the quiz and generate a personalized weekly workout plan (with optional PDF download).
+*Key action:* 
+Complete the quiz and generate a personalized weekly workout plan (with optional PDF download).
 
 *Pages/sections needed:*
 •⁠ ⁠Landing page with brief explanation and “Build My Plan” button
