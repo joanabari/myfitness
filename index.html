@@ -1,1 +1,350 @@
-Hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyFitness — Personalized Gym Plan Generator</title>
+  <meta name="description" content="Create your personalized weekly workout plan with MyFitness. Take our quick quiz and get a custom gym plan." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">My<span>Fitness</span></div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#quiz-section">Build Plan</a></li>
+      <li><a href="#tracker-section">Progress</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== HOME ========== -->
+  <section class="hero" id="home">
+    <p class="hero-label">Personalized Gym Plans</p>
+    <h1>Your Perfect<br><em class="gradient-text">Workout Plan</em></h1>
+    <p>Answer a few questions and get a fully customized weekly gym schedule — tailored to your goals, experience, and equipment.</p>
+    <a href="#quiz-section" class="btn btn-primary">Build My Plan →</a>
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="Person training with weights in a modern gym" class="hero-img" />
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">Three simple steps to your personalized training program.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">Step 1</div>
+        <h3>Take the Quiz</h3>
+        <p>Answer 6 quick questions about your goals, experience, and schedule.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 2</div>
+        <h3>Get Your Plan</h3>
+        <p>Receive a personalized weekly workout split with exercises, sets, and reps.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 3</div>
+        <h3>Start Training</h3>
+        <p>Follow your plan, track your progress, and crush your fitness goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== QUIZ ========== -->
+  <section class="quiz-section" id="quiz-section">
+    <div class="quiz-wrap">
+      <h2 class="section-title">Build Your Plan</h2>
+      <p class="section-subtitle">Answer each question, then click Next.</p>
+
+      <div class="progress-bar"><div class="progress-fill" id="pFill" style="width:16.7%"></div></div>
+
+      <!-- Q1 -->
+      <div class="quiz-question active" data-step="0">
+        <h2>What's your fitness goal?</h2>
+        <p>Choose the goal that best matches what you're training for.</p>
+        <div class="options">
+          <button class="option-btn" data-key="goal" data-val="build_muscle"><strong>Build Muscle</strong><small>Increase size and definition</small></button>
+          <button class="option-btn" data-key="goal" data-val="lose_fat"><strong>Lose Fat</strong><small>Burn calories and lean out</small></button>
+          <button class="option-btn" data-key="goal" data-val="general_fitness"><strong>General Fitness</strong><small>Stay healthy and active</small></button>
+          <button class="option-btn" data-key="goal" data-val="strength"><strong>Build Strength</strong><small>Get stronger on big lifts</small></button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-question" data-step="1">
+        <h2>Experience level?</h2>
+        <p>Be honest — we'll adjust volume and intensity accordingly.</p>
+        <div class="options">
+          <button class="option-btn" data-key="experience" data-val="beginner"><strong>Beginner</strong><small>Less than 6 months training</small></button>
+          <button class="option-btn" data-key="experience" data-val="intermediate"><strong>Intermediate</strong><small>6 months to 2 years</small></button>
+          <button class="option-btn" data-key="experience" data-val="advanced"><strong>Advanced</strong><small>2+ years consistent training</small></button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-question" data-step="2">
+        <h2>How many days per week?</h2>
+        <p>Pick a number you can realistically commit to.</p>
+        <div class="options">
+          <button class="option-btn" data-key="days" data-val="3"><strong>3 Days</strong><small>Great for balanced training</small></button>
+          <button class="option-btn" data-key="days" data-val="4"><strong>4 Days</strong><small>Upper/Lower or PPL works well</small></button>
+          <button class="option-btn" data-key="days" data-val="5"><strong>5 Days</strong><small>Serious commitment</small></button>
+          <button class="option-btn" data-key="days" data-val="6"><strong>6 Days</strong><small>Maximum frequency</small></button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quiz-question" data-step="3">
+        <h2>How long per session?</h2>
+        <p>Including warm-up but not counting commute.</p>
+        <div class="options">
+          <button class="option-btn" data-key="duration" data-val="30"><strong>30 min</strong><small>Quick and efficient</small></button>
+          <button class="option-btn" data-key="duration" data-val="45"><strong>45 min</strong><small>Solid session</small></button>
+          <button class="option-btn" data-key="duration" data-val="60"><strong>60 min</strong><small>Standard gym session</small></button>
+          <button class="option-btn" data-key="duration" data-val="90"><strong>90 min</strong><small>Extended training</small></button>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="quiz-question" data-step="4">
+        <h2>What split do you prefer?</h2>
+        <p>This determines how your workouts are organized.</p>
+        <div class="options">
+          <button class="option-btn" data-key="split" data-val="full_body"><strong>Full Body</strong><small>Every muscle each session</small></button>
+          <button class="option-btn" data-key="split" data-val="upper_lower"><strong>Upper / Lower</strong><small>Split by body halves</small></button>
+          <button class="option-btn" data-key="split" data-val="push_pull_legs"><strong>Push / Pull / Legs</strong><small>Classic 3-way split</small></button>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="quiz-question" data-step="5">
+        <h2>What equipment do you have?</h2>
+        <p>We'll tailor exercises to your setup.</p>
+        <div class="options">
+          <button class="option-btn" data-key="equip" data-val="full_gym"><strong>Full Gym</strong><small>Barbells, cables, machines</small></button>
+          <button class="option-btn" data-key="equip" data-val="home_gym"><strong>Home Gym</strong><small>Dumbbells and bands</small></button>
+          <button class="option-btn" data-key="equip" data-val="bodyweight"><strong>Bodyweight Only</strong><small>No equipment needed</small></button>
+        </div>
+      </div>
+
+      <div class="quiz-nav">
+        <button class="btn btn-ghost" id="btnBack" onclick="quizBack()">← Back</button>
+        <button class="btn btn-primary" id="btnNext" onclick="quizNext()">Next →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESULTS ========== -->
+  <section class="plan-section hidden" id="plan-section">
+    <div class="plan-wrap">
+      <h2 class="section-title">Your Plan is Ready 💪</h2>
+      <p class="section-subtitle" id="planSubtitle"></p>
+      <div class="split-badges" id="splitBadges"></div>
+      <div id="dayCards"></div>
+      <div class="plan-actions">
+        <button class="btn btn-primary" onclick="downloadPlan()">⬇ Download Plan</button>
+        <a href="#tracker-section" class="btn btn-outline">Track Progress →</a>
+        <a href="#quiz-section" class="btn btn-ghost" onclick="resetQuiz()">↻ Retake Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROGRESS TRACKER ========== -->
+  <section class="tracker-section" id="tracker-section">
+    <div class="tracker-wrap">
+      <h2 class="section-title">Weekly Progress</h2>
+      <p class="section-subtitle">Check off each workout as you complete it.</p>
+      <div class="progress-bar" style="height:10px;margin-bottom:2rem">
+        <div class="progress-fill" id="tFill" style="width:0%"></div>
+      </div>
+      <div class="checklist" id="checklist">
+        <p class="text-center" style="color:#7d8590">Complete the quiz above to see your workouts here.</p>
+      </div>
+      <div class="complete-banner" id="completeBanner">
+        <div class="cb-title">🎉 Week Complete!</div>
+        <p>Amazing work! Keep up the momentum.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">My<span>Fitness</span></div>
+    <p>Built by Niclas Grosch · Babson College · 2026</p>
+  </footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+var step = 0, total = 6, answers = {};
+var questions = document.querySelectorAll('.quiz-question');
+
+document.querySelectorAll('.option-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var key = this.dataset.key, val = this.dataset.val;
+    answers[key] = val;
+    this.parentElement.querySelectorAll('.option-btn').forEach(function(b) { b.classList.remove('selected'); });
+    this.classList.add('selected');
+  });
+});
+
+function showStep(n) {
+  questions.forEach(function(q) { q.classList.remove('active'); });
+  questions[n].classList.add('active');
+  document.getElementById('pFill').style.width = ((n + 1) / total * 100) + '%';
+  document.getElementById('btnBack').style.visibility = n === 0 ? 'hidden' : 'visible';
+  document.getElementById('btnNext').textContent = n === total - 1 ? 'Generate Plan →' : 'Next →';
+}
+
+function quizNext() {
+  if (step < total - 1) { step++; showStep(step); }
+  else { generatePlan(); }
+}
+
+function quizBack() {
+  if (step > 0) { step--; showStep(step); }
+}
+
+function resetQuiz() {
+  step = 0; answers = {};
+  document.querySelectorAll('.option-btn').forEach(function(b) { b.classList.remove('selected'); });
+  document.getElementById('plan-section').classList.add('hidden');
+  showStep(0);
+}
+
+var exercises = {
+  full_gym: {
+    chest: [{n:"Bench Press",s:4,r:"8-10",re:"90s"},{n:"Incline DB Press",s:3,r:"10-12",re:"75s"},{n:"Cable Flyes",s:3,r:"12-15",re:"60s"}],
+    back: [{n:"Deadlift",s:4,r:"6-8",re:"120s"},{n:"Barbell Rows",s:4,r:"8-10",re:"90s"},{n:"Lat Pulldown",s:3,r:"10-12",re:"75s"}],
+    shoulders: [{n:"Overhead Press",s:4,r:"8-10",re:"90s"},{n:"Lateral Raises",s:3,r:"12-15",re:"60s"},{n:"Face Pulls",s:3,r:"15-20",re:"60s"}],
+    legs: [{n:"Barbell Squat",s:4,r:"8-10",re:"120s"},{n:"Romanian Deadlift",s:3,r:"10-12",re:"90s"},{n:"Leg Press",s:3,r:"10-12",re:"90s"},{n:"Calf Raises",s:4,r:"15-20",re:"60s"}],
+    arms: [{n:"Barbell Curls",s:3,r:"10-12",re:"60s"},{n:"Skull Crushers",s:3,r:"10-12",re:"60s"},{n:"Hammer Curls",s:3,r:"12-15",re:"60s"}],
+    core: [{n:"Hanging Leg Raises",s:3,r:"12-15",re:"60s"},{n:"Cable Crunches",s:3,r:"15-20",re:"45s"},{n:"Plank",s:3,r:"60s",re:"45s"}]
+  },
+  home_gym: {
+    chest: [{n:"Push-Ups",s:4,r:"15-20",re:"60s"},{n:"DB Floor Press",s:3,r:"12-15",re:"75s"},{n:"Diamond Push-Ups",s:3,r:"10-15",re:"60s"}],
+    back: [{n:"Dumbbell Rows",s:4,r:"10-12",re:"75s"},{n:"Band Pull-Aparts",s:3,r:"15-20",re:"60s"},{n:"Superman Hold",s:3,r:"30-45s",re:"45s"}],
+    shoulders: [{n:"DB Shoulder Press",s:4,r:"10-12",re:"75s"},{n:"Lateral Raises",s:3,r:"12-15",re:"60s"},{n:"Pike Push-Ups",s:3,r:"10-12",re:"75s"}],
+    legs: [{n:"Goblet Squats",s:4,r:"12-15",re:"75s"},{n:"Bulgarian Split Sq.",s:3,r:"10 each",re:"75s"},{n:"Dumbbell RDL",s:3,r:"12-15",re:"75s"},{n:"Calf Raises",s:4,r:"15-20",re:"45s"}],
+    arms: [{n:"Dumbbell Curls",s:3,r:"12-15",re:"60s"},{n:"Overhead Tri. Ext.",s:3,r:"12-15",re:"60s"},{n:"Hammer Curls",s:3,r:"12-15",re:"60s"}],
+    core: [{n:"Crunches",s:3,r:"20-25",re:"45s"},{n:"Leg Raises",s:3,r:"15-20",re:"45s"},{n:"Plank",s:3,r:"60s",re:"45s"}]
+  },
+  bodyweight: {
+    chest: [{n:"Push-Ups",s:4,r:"Max",re:"60s"},{n:"Wide Push-Ups",s:3,r:"12-15",re:"60s"},{n:"Decline Push-Ups",s:3,r:"10-15",re:"60s"}],
+    back: [{n:"Pull-Ups",s:4,r:"8-12",re:"90s"},{n:"Superman Hold",s:3,r:"30-45s",re:"45s"},{n:"Doorway Rows",s:3,r:"12-15",re:"60s"}],
+    shoulders: [{n:"Pike Push-Ups",s:4,r:"10-12",re:"75s"},{n:"Wall Handstand Hold",s:3,r:"20-30s",re:"75s"},{n:"Arm Circles",s:3,r:"30s",re:"45s"}],
+    legs: [{n:"Squats",s:4,r:"20-25",re:"60s"},{n:"Jump Squats",s:3,r:"12-15",re:"75s"},{n:"Lunges",s:3,r:"12 each",re:"60s"},{n:"Calf Raises",s:4,r:"20-25",re:"45s"}],
+    arms: [{n:"Diamond Push-Ups",s:3,r:"10-15",re:"60s"},{n:"Tricep Dips",s:3,r:"12-15",re:"60s"},{n:"Chin-Ups",s:3,r:"8-10",re:"75s"}],
+    core: [{n:"Plank",s:3,r:"60s",re:"45s"},{n:"Bicycle Crunches",s:3,r:"20",re:"45s"},{n:"Mountain Climbers",s:3,r:"30s",re:"45s"}]
+  }
+};
+
+var dayNames = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+
+function generatePlan() {
+  var pool = exercises[answers.equip] || exercises.full_gym;
+  var days = parseInt(answers.days) || 3;
+  var dur = parseInt(answers.duration) || 60;
+  var split = answers.split || 'full_body';
+  var splitName, splitDesc, schedule = [];
+
+  if (split === 'push_pull_legs' && days >= 3) {
+    splitName = 'Push / Pull / Legs';
+    splitDesc = 'Classic split separating pushing, pulling, and lower body movements.';
+    var c = [{f:'Push',m:['chest','shoulders','arms']},{f:'Pull',m:['back','arms']},{f:'Legs',m:['legs','core']}];
+    for (var i = 0; i < days; i++) schedule.push({day: dayNames[i], focus: c[i%3].f, muscles: c[i%3].m});
+  } else if (split === 'upper_lower') {
+    splitName = 'Upper / Lower';
+    splitDesc = 'Alternating upper and lower body days for balanced training.';
+    var c2 = [{f:'Upper Body',m:['chest','back','shoulders','arms']},{f:'Lower Body',m:['legs','core']}];
+    for (var i = 0; i < days; i++) schedule.push({day: dayNames[i], focus: c2[i%2].f, muscles: c2[i%2].m});
+  } else {
+    splitName = 'Full Body';
+    splitDesc = 'Hit every major muscle group each session.';
+    for (var i = 0; i < days; i++) schedule.push({day: dayNames[i], focus: 'Full Body', muscles: ['chest','back','legs','shoulders','core']});
+  }
+
+  var plan = schedule.map(function(s) {
+    var exs = [];
+    s.muscles.forEach(function(m) {
+      var take = s.muscles.length > 3 ? 1 : 2;
+      (pool[m]||[]).slice(0, take).forEach(function(e) { exs.push({n:e.n,s:e.s,r:e.r,re:e.re}); });
+    });
+    if (dur <= 30) exs = exs.slice(0,3);
+    else if (dur <= 45) exs = exs.slice(0,4);
+    exs = exs.map(function(e) {
+      if (answers.goal==='strength') return {n:e.n,s:Math.min(e.s+1,5),r:'3-5',re:'180s'};
+      if (answers.goal==='lose_fat') return {n:e.n,s:e.s,r:'15-20',re:'45s'};
+      if (answers.goal==='build_muscle') return {n:e.n,s:e.s,r:'8-12',re:'90s'};
+      return e;
+    });
+    if (answers.experience==='beginner') exs = exs.map(function(e){return {n:e.n,s:Math.max(e.s-1,2),r:e.r,re:e.re};});
+    if (answers.experience==='advanced') exs = exs.map(function(e){return {n:e.n,s:e.s+1,r:e.r,re:e.re};});
+    return {day: s.day, focus: s.focus, exercises: exs};
+  });
+
+  window._plan = {name: splitName, desc: splitDesc, days: plan};
+  renderPlan();
+  renderTracker();
+  document.getElementById('plan-section').classList.remove('hidden');
+  document.getElementById('plan-section').scrollIntoView({behavior:'smooth'});
+}
+
+function renderPlan() {
+  var p = window._plan;
+  document.getElementById('planSubtitle').innerHTML = '<strong>' + p.name + '</strong> — ' + p.desc;
+  var badges = '';
+  p.days.forEach(function(d){ badges += '<div class="badge"><small>'+d.day.slice(0,3)+'</small><strong>'+d.focus+'</strong></div>'; });
+  document.getElementById('splitBadges').innerHTML = badges;
+  var cards = '';
+  p.days.forEach(function(d, i) {
+    var rows = '<div class="ex-row ex-header"><span>Exercise</span><span class="ex-val">Sets</span><span class="ex-val">Reps</span><span class="ex-val">Rest</span></div>';
+    d.exercises.forEach(function(e) {
+      rows += '<div class="ex-row"><span class="ex-name">'+e.n+'</span><span class="ex-val">'+e.s+'</span><span class="ex-val">'+e.r+'</span><span class="ex-val">'+e.re+'</span></div>';
+    });
+    cards += '<div class="day-card" id="dc'+i+'"><button class="day-header" onclick="document.getElementById(\'dc'+i+'\').classList.toggle(\'open\')"><div class="day-label"><div class="day-abbr">'+d.day.slice(0,3)+'</div><div><div class="day-name">'+d.day+'</div><div class="day-info">'+d.focus+' · '+d.exercises.length+' exercises</div></div></div><span>▾</span></button><div class="day-body">'+rows+'</div></div>';
+  });
+  document.getElementById('dayCards').innerHTML = cards;
+}
+
+function renderTracker() {
+  var p = window._plan;
+  if (!p) return;
+  var done = JSON.parse(localStorage.getItem('myfit_done') || '{}');
+  var count = 0;
+  var html = '';
+  p.days.forEach(function(d) {
+    var isDone = done[d.day];
+    if (isDone) count++;
+    html += '<button class="check-item'+(isDone?' done':'')+'" onclick="toggleDone(\''+d.day+'\')"><div class="check-circle"></div><div><div class="ci-name">'+d.day+'</div><div class="ci-info">'+d.focus+' · '+d.exercises.length+' exercises</div></div></button>';
+  });
+  document.getElementById('checklist').innerHTML = html;
+  var pct = Math.round(count / p.days.length * 100);
+  document.getElementById('tFill').style.width = pct + '%';
+  document.getElementById('completeBanner').className = 'complete-banner' + (pct === 100 ? ' show' : '');
+}
+
+function toggleDone(day) {
+  var done = JSON.parse(localStorage.getItem('myfit_done') || '{}');
+  done[day] = !done[day];
+  localStorage.setItem('myfit_done', JSON.stringify(done));
+  renderTracker();
+}
+
+function downloadPlan() {
+  var p = window._plan;
+  if (!p) return;
+  var t = 'MYFITNESS — YOUR WORKOUT PLAN\n================================\n' + p.name + '\n' + p.desc + '\n\n';
+  p.days.forEach(function(d) {
+    t += '--- ' + d.day + ' — ' + d.focus + ' ---\n';
+    d.exercises.forEach(function(e) { t += '  • ' + e.n + '  —  ' + e.s + ' sets × ' + e.r + '  |  Rest: ' + e.re + '\n'; });
+    t += '\n';
+  });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([t], {type:'text/plain'}));
+  a.download = 'MyFitness-Plan.txt';
+  a.click();
+}
+</script>
+</body>
+</html>

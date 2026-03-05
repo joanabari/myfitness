@@ -6,12 +6,12 @@
 **Key action:** [Explore different fitness plan options]
 
 **Pages/sections needed:**
-- [list them]
+- [It works in a survey way where it let's you create a personalized plan]
 
-**Content status:** [What content do you have? What do you still need from the client?]
+**Content status:** [Content I have is basically asking questions about their preferences and habits and then they can download their plan as a PDF]
 
-**Style preferences:** [Colors, fonts, vibe - based on what they told you]
+**Style preferences:** [He says his favorite color is blue so I made sure to use blue black and white, as he described he wanted it to look feminine as most of these sites normally are targeted towards women ]
 
 **Inspiration sites:**
-- [Site 1] - what they liked about it
-- [Site 2] - what they liked about it
+- Nike train website 
+- Everfit
